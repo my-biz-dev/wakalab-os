@@ -1,0 +1,9 @@
+name: Diag - security-events minimal
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  diag:
+    uses: my-biz-dev/actions-platform/.github/workflows/diag-security-events.yml@diag/security-events-test

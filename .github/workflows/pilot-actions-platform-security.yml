@@ -1,0 +1,20 @@
+name: Pilot - actions-platform security
+
+# actions-platform (my-biz-dev/actions-platform) Issue #2 の pilot repo 呼び出し確認用。
+# security.yml@v1（CodeQL）が実際のapplication repoから呼び出せることを検証する
+# 一時的なworkflow。既存のCI（ci.yml等）は変更しない。
+# 検証完了後、このファイルは削除するか判断する。
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  security:
+    permissions:
+      contents: read
+      security-events: write
+    uses: my-biz-dev/actions-platform/.github/workflows/security.yml@v1
+    with:
+      languages: "javascript-typescript"

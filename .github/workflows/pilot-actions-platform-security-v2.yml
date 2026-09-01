@@ -1,0 +1,12 @@
+name: Pilot - actions-platform security v2
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  security:
+    uses: my-biz-dev/actions-platform/.github/workflows/security.yml@v1
+    with:
+      languages: "javascript-typescript"
